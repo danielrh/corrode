@@ -77,7 +77,7 @@ main = dieOnError $ do
                     { outputFile = Nothing
                     , extraOptions = filter (not . ("-O" `isPrefixOf`)) (extraOptions rawArgs)
                     })
-                (map Undefine ["__BLOCKS__", "__FILE__", "__LINE__"])
+                (defines ++ undefines)
     ```
 
 1. Run the preprocessor&mdash;except that if the input appears to have
